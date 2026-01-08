@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bab 3: CSS3 & Layout | CodeLearn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bab-page">
+
+    <!-- ================= HEADER ================= -->
+    <header class="navbar">
+        <div class="nav-left">
+            <button class="hamburger" aria-label="Menu">☰</button>
+            <div class="logo">Code<span class="dot">Learn</span>.</div>
+        </div>
+
+        <div class="nav-right">
+            <button class="theme-btn" aria-label="Theme">☀️</button>
+            <a href="../home.html" class="logout-btn">Kembali</a>
+        </div>
+    </header>
+
+    <!-- ================= SIDE MENU ================= -->
+    <aside class="side-menu">
+        <a href="../home.html">Home</a>
+        <a href="../tentang.html">Tentang</a>
+        <a href="../profil.html">Profil Saya</a>
+
+        <div class="side-dropdown active">
+            <button class="side-dropdown-title">
+                Materi
+                <span class="arrow">▸</span>
+            </button>
+            <div class="side-dropdown-menu">
+                <a href="bab1.html">Bab 1</a>
+                <a href="bab2.html">Bab 2</a>
+                <a href="bab3.html" class="active">Bab 3</a>
+                <a href="bab4.html">Bab 4</a>
+                <a href="bab5.html">Bab 5</a>
+                <a href="bab6.html">Bab 6</a>
+                <a href="bab7.html">Bab 7</a>
+                <a href="bab8.html">Bab 8</a>
+            </div>
+        </div>
+
+        <a href="../kontak.html">Kontak</a>
+    </aside>
+
+    <!-- ================= CONTENT ================= -->
+    <div class="content-wrapper">
+
+        <!-- ===== Sidebar Daftar Isi ===== -->
+        <aside class="sidebar">
+            <h3>Daftar Isi</h3>
+            <ul class="toc-list">
+                <li><a href="#pengenalan">3.1 Pengenalan</a></li>
+                <li><a href="#selector">3.2 Selektor & Properti</a></li>
+                <li><a href="#box-model">3.3 Box Model</a></li>
+                <li><a href="#warna-typo">3.4 Warna & Tipografi</a></li>
+                <li><a href="#flexbox-grid">3.5 Flexbox & Grid</a></li>
+                <li><a href="#animasi">3.6 Animasi</a></li>
+                <li><a href="#praktikum">3.7 Praktikum</a></li>
+            </ul>
+        </aside>
+
+        <!-- ===== Main Content ===== -->
+        <main class="main-content">
+
+            <section id="bab3">
+                <h1>Bab 3 – CSS3 & Layout</h1>
+
+                <section id="pengenalan">
+                    <h2>3.1 Pengenalan</h2>
+                    <p>
+                        CSS3 adalah teknologi yang digunakan untuk mengatur tampilan
+                        dan layout halaman website. Dengan CSS3, halaman web dapat
+                        dibuat lebih menarik, rapi, dan responsif.
+                    </p>
+                </section>
+
+                <section id="selector">
+                    <h2>3.2 Selektor & Properti</h2>
+                    <p>
+                        Selektor digunakan untuk memilih elemen HTML yang akan diberi
+                        gaya, sedangkan properti menentukan jenis tampilan yang diatur.
+                    </p>
+                    
+                    <div class="feature-container grid-auto-300 gap-20 mt-20 w-full">
+                        <!-- Card 1: Rumus Dasar -->
+                        <div class="feature-card p-25 text-left">
+                            <div class="feature-icon mb-15"><i class="fas fa-code text-gold"></i></div>
+                            <h3 class="mb-15 text-gold-light">Rumus Dasar CSS</h3>
+                            <pre class="mb-0 font-size-14">
+selektor {
+    properti: nilai;
+}
+
+/* Contoh */
+h1 { color: blue; }</pre>
+                        </div>
+
+                        <!-- Card 2: Jenis Selektor -->
+                        <div class="feature-card p-25 text-left">
+                            <div class="feature-icon mb-15"><i class="fas fa-list text-gold"></i></div>
+                            <h3 class="mb-15 text-gold-light">Jenis Selektor</h3>
+                            <table class="w-100 font-size-14 text-gray table-collapse">
+                                <tr class="border-bottom-gold">
+                                    <th class="th-cell">Selektor</th>
+                                    <th class="th-cell">Simbol</th>
+                                    <th class="th-cell">Target</th>
+                                </tr>
+                                <tr class="border-bottom-light">
+                                    <td class="td-cell">Tag</td>
+                                    <td class="td-cell"><code>p</code></td>
+                                    <td class="td-cell">Semua <code>&lt;p&gt;</code></td>
+                                </tr>
+                                <tr class="border-bottom-light">
+                                    <td class="td-cell">Class</td>
+                                    <td class="td-cell"><code>.btn</code></td>
+                                    <td class="td-cell"><code>class="btn"</code></td>
+                                </tr>
+                                <tr>
+                                    <td class="td-cell">ID</td>
+                                    <td class="td-cell"><code>#unik</code></td>
+                                    <td class="td-cell"><code>id="unik"</code></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="box-model">
+                    <h2>3.3 Box Model</h2>
+                    <div class="feature-container grid-1 mt-20 w-full">
+                        <div class="feature-card p-30 text-left">
+                            <div class="d-flex flex-wrap gap-30 items-center">
+                                <div class="flex-1 min-w-250">
+                                    <h3 class="mb-15 text-gold-light">Struktur Box Model</h3>
+                                    <p class="mb-15 line-height-18">
+                                        Setiap elemen HTML adalah kotak yang terdiri dari lapisan-lapisan berikut:
+                                    </p>
+                                    <ul class="mb-20 text-gray ml-20">
+                                        <li><span class="color-red-light">■</span> <strong>Margin:</strong> Ruang kosong di luar border.</li>
+                                        <li><span class="color-gold">■</span> <strong>Border:</strong> Garis tepi elemen.</li>
+                                        <li><span class="color-blue-light">■</span> <strong>Padding:</strong> Ruang antara konten dan border.</li>
+                                        <li><span class="color-white">■</span> <strong>Content:</strong> Isi elemen sebenarnya.</li>
+                                    </ul>
+                                    <pre class="mb-0 font-size-13">
+.box {
+  margin: 20px;   /* Luar */
+  border: 5px solid gold;
+  padding: 20px;  /* Dalam */
+}</pre>
+                                </div>
+                                <div class="flex-basis-300 d-flex flex-center">
+                                    <!-- Visualisasi Box Model dengan CSS -->
+                                    <div class="box-model-viz">
+                                        <span class="box-margin-label">MARGIN</span>
+                                        <div class="box-border">
+                                            <span class="box-border-label">BORDER</span>
+                                            <div class="box-padding">
+                                                <span class="box-padding-label">PADDING</span>
+                                                <div class="box-content">
+                                                    CONTENT
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="warna-typo">
+                    <h2>3.4 Warna & Tipografi</h2>
+                    <div class="feature-container grid-1 mt-20 w-full">
+                        <div class="feature-card p-30 text-left">
+                            <div class="d-flex flex-wrap gap-30 items-center">
+                                <div class="flex-1 min-w-250">
+                                    <h3 class="mb-15 text-gold-light">Styling Text</h3>
+                                    <p class="mb-15">
+                                        CSS digunakan untuk mengatur warna, ukuran font, dan jenis
+                                        huruf agar tampilan lebih nyaman dibaca.
+                                    </p>
+                                    <pre class="mb-0 font-size-14">
+.teks-info {
+    color: #d4af37;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}</pre>
+                                </div>
+                                <div class="flex-basis-250 text-center">
+                                    <div class="preview-box-dashed">
+                                        <p class="text-gold font-size-18 mb-0">Halo, ini contoh teks dengan font Poppins!</p>
+                                    </div>
+                                    <p class="mt-10 font-size-12 text-gray-light">Preview Hasil</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="flexbox-grid">
+                    <h2>3.5 Flexbox & Grid</h2>
+                    <div class="feature-container grid-auto-300 gap-20 mt-20 w-full">
+                        <!-- Card 1: Flexbox -->
+                        <div class="feature-card p-25 text-left">
+                            <div class="feature-icon mb-15"><i class="fas fa-layer-group text-gold"></i></div>
+                            <h3 class="mb-15 text-gold-light">Flexbox (1 Dimensi)</h3>
+                            <p class="mb-15 font-size-14">Mengatur elemen dalam satu baris atau kolom.</p>
+                            <pre class="mb-0 font-size-14">
+.container {
+  display: flex;
+  justify-content: center;
+}</pre>
+                        </div>
+
+                        <!-- Card 2: Grid -->
+                        <div class="feature-card p-25 text-left">
+                            <div class="feature-icon mb-15"><i class="fas fa-th-large text-gold"></i></div>
+                            <h3 class="mb-15 text-gold-light">Grid (2 Dimensi)</h3>
+                            <p class="mb-15 font-size-14">Mengatur elemen dalam baris dan kolom sekaligus.</p>
+                            <pre class="mb-0 font-size-14">
+.galeri {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}</pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="animasi">
+                    <h2>3.6 Animasi</h2>
+                    <div class="feature-container grid-1 mt-20 w-full">
+                        <div class="feature-card p-30 text-left">
+                            <div class="d-flex flex-wrap gap-30 items-center">
+                                <div class="flex-1 min-w-250">
+                                    <h3 class="mb-15 text-gold-light">Transisi & Transformasi</h3>
+                                    <p class="mb-15">
+                                        CSS3 memungkinkan elemen bergerak atau berubah bentuk saat berinteraksi.
+                                        Arahkan kursor ke kotak di samping untuk melihat efeknya!
+                                    </p>
+                                    <pre class="mb-0 font-size-14">
+.box {
+    transition: transform 0.5s;
+}
+
+.box:hover {
+    transform: scale(1.1) rotate(10deg);
+}</pre>
+                                </div>
+                                
+                                <div class="flex-basis-200 d-flex flex-center">
+                                    <!-- Demo Element -->
+                                    <div class="demo-box-anim"
+                                        onmouseover="this.style.transform='scale(1.2) rotate(10deg)'"
+                                        onmouseout="this.style.transform='scale(1) rotate(0deg)'">
+                                        Hover Me!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="praktikum">
+                    <h2>3.7 Praktikum</h2>
+                    <div class="feature-container grid-auto-300 gap-20 mt-20 w-full">
+                        <!-- Card 1: Misi -->
+                        <div class="feature-card p-30 text-left">
+                            <h3 class="mb-15 text-gold-light">🎯 Misi Styling:</h3>
+                            <ul class="mb-20 text-gray line-height-18 pl-20">
+                                <li>Foto profil berbentuk lingkaran (<code>border-radius: 50%</code>)</li>
+                                <li>Background body abu-abu muda</li>
+                                <li>Konten utama rata tengah (<code>text-align: center</code>)</li>
+                            </ul>
+                            <button id="btnShowCode37" class="btn-purple btn-blue-shadow">Lihat Contoh Kode <i class="fas fa-chevron-down"></i></button>
+                        </div>
+
+                        <!-- Card 2: Code Editor -->
+                        <div id="code37" class="feature-card code-preview-box" style="display: none;">
+                            <div class="code-header">
+                                <div class="d-flex gap-10 mr-15">
+                                    <span class="mac-dot red"></span>
+                                    <span class="mac-dot yellow"></span>
+                                    <span class="mac-dot green"></span>
+                                </div>
+                                <span class="code-filename">style.css</span>
+                            </div>
+                            <div class="code-body">
+                                <pre class="code-pre">
+<span class="sh-blue">img</span> {
+  <span class="sh-cyan">border-radius</span>: <span class="sh-green-light">50%</span>;
+}
+<span class="sh-blue">body</span> {
+  <span class="sh-cyan">background-color</span>: <span class="sh-orange">#f4f4f4</span>;
+  <span class="sh-cyan">text-align</span>: <span class="sh-orange">center</span>;
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ================= NAVIGASI BAB 3 ================= -->
+    <div class="bab-navigation">
+        <a href="bab2.html" class="bab-prev">
+            <i class="fas fa-arrow-left"></i> Bab 2: HTML
+        </a>
+        <a href="bab4.html" class="bab-next">
+            Lanjut: Bab 4 (CSS Framework) <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 CodeLearn. All Rights Reserved.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
